@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoGuesser | Game</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="game-shell mimic">
+      <iframe id="streetView" title="Street view" allowfullscreen loading="eager"></iframe>
+
+      <section class="top-left-controls panel-lite">
+        <div class="row user-row">
+          <strong id="userLabel"></strong>
+          <button id="logoutBtn" class="ghost-btn">Logout</button>
+        </div>
+        <div class="row">
+          <select id="modeSelect">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+            <option value="blitz">Blitz</option>
+          </select>
+          <button id="startBtn">New Game</button>
+          <button id="dailyBtn" class="ghost-btn">Daily</button>
+        </div>
+        <div class="row stats-row">
+          <span class="score-chip">Score <strong id="scoreLabel">0</strong></span>
+          <span id="streakLabel">Streak: 0</span>
+        </div>
+        <div class="row">
+          <button id="clueBtn" class="ghost-btn">Reveal Clue</button>
+          <button id="toggleBoardBtn" class="ghost-btn">Leaderboard</button>
+        </div>
+        <p id="penaltyLabel">Penalty: 0%</p>
+        <ul id="clueList"></ul>
+      </section>
+
+      <div class="compass-wrap">
+        <div class="compass-bar">
+          <span>SE</span>
+          <span class="ticks"></span>
+          <strong>S</strong>
+          <span class="ticks"></span>
+          <span>SW</span>
+        </div>
+      </div>
+
+      <div class="timer-wrap">
+        <div class="timer-pill" id="timerLabel">01:30</div>
+      </div>
+
+      <div class="round-badge">
+        <small>ROUND</small>
+        <strong id="roundLabel">-/-</strong>
+      </div>
+
+      <aside class="map-mini-wrap">
+        <div id="map"></div>
+        <div class="mini-actions">
+          <button id="recenterBtn" class="ghost-btn">◎</button>
+          <button id="clearGuessBtn" class="ghost-btn" disabled>✕</button>
+          <button id="guessBtn" disabled>GUESS</button>
+        </div>
+        <p id="statusLabel">Place your pin on the map.</p>
+        <div class="progress-track"><div id="roundProgress" class="progress-fill"></div></div>
+      </aside>
+
+      <div class="left-tool-stack">
+        <button id="zoomInBtn" class="tool-btn">+</button>
+        <button id="zoomOutBtn" class="tool-btn">−</button>
+      </div>
+
+      <section id="leaderboardPanel" class="leaderboard-flyout panel-lite" hidden>
+        <h3>Leaderboard</h3>
+        <select id="leaderboardMode">
+          <option value="all">All</option>
+          <option value="easy">Easy</option>
+          <option value="normal" selected>Normal</option>
+          <option value="hard">Hard</option>
+          <option value="blitz">Blitz</option>
+        </select>
+        <ol id="leaderboardList"></ol>
+        <p id="bestLabel">Personal best: -</p>
+        <button id="closeBoardBtn" class="ghost-btn">Close</button>
+      </section>
+
+      <div id="scorePop" class="score-pop" hidden>+0</div>
+      <button id="restartBtn" class="restart-fab" hidden>Play Again</button>
+      <p id="modeMeta" class="mode-meta"></p>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="./game.js"></script>
+  </body>
+</html>

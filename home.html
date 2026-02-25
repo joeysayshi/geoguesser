@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoGuesser | Home</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="home-body">
+    <main class="home-shell">
+      <header class="home-topbar">
+        <div class="brand">GEOGUESSR</div>
+        <nav class="home-nav">
+          <a href="#">Singleplayer</a>
+          <a href="#">Multiplayer</a>
+          <a href="#">Party</a>
+          <a href="#">Quiz</a>
+          <a href="#">Community</a>
+          <a href="#">Shop</a>
+          <a href="#">Merch</a>
+          <a href="#">World Championship</a>
+        </nav>
+        <div class="home-user tools">
+          <button id="searchBtn" class="icon-btn" aria-label="Search">⌕</button>
+          <span id="homeUserLabel">Player</span>
+          <button id="profileBtn" class="icon-btn" aria-label="Profile">◉</button>
+          <button id="homeLogoutBtn" class="ghost-btn">Logout</button>
+        </div>
+      </header>
+
+      <section class="home-hero">
+        <h1>GEOGUESSR</h1>
+        <p>Welcome to the world of GeoGuessr!</p>
+      </section>
+
+      <section class="home-cards">
+        <article class="home-card featured">
+          <div class="card-badge">EXPEDITION • CHAPTER 2</div>
+          <h3>Continue your expedition</h3>
+          <p>Pick up where you left off and keep your streak alive.</p>
+          <button id="continueBtn">NEXT CHAPTER</button>
+        </article>
+
+        <article class="home-card daily">
+          <div class="card-badge">SINGLE PLAYER</div>
+          <h3>Your daily dose of GeoGuessr</h3>
+          <p>3 locations. One shot. Keep your daily streak alive.</p>
+          <button id="dailyPlayBtn">PLAY NOW</button>
+        </article>
+
+        <article class="home-card explore">
+          <div class="card-badge">SINGLEPLAYER</div>
+          <h3>Explore the globe</h3>
+          <p>Play at your own pace with official and community maps.</p>
+          <button id="exploreBtn">START</button>
+        </article>
+
+        <article class="home-card duel">
+          <div class="card-badge">MULTIPLAYER</div>
+          <h3>Prove your skill</h3>
+          <p>Duel against other players and climb the rank.</p>
+          <button id="duelBtn">PLAY DUEL</button>
+        </article>
+      </section>
+
+      <div class="home-dots" aria-hidden="true">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <aside class="home-side-rail">
+        <button class="rail-btn">👤</button>
+        <button class="rail-btn">🏆</button>
+      </aside>
+    </main>
+
+    <script src="./home.js"></script>
+  </body>
+</html>
