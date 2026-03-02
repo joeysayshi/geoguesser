@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: Inter, system-ui, sans-serif; background: #0b1220; color: #e8eefc; }
+a { color: inherit; }
+.container { width: min(980px, calc(100% - 2rem)); margin: 2rem auto; }
+.card { border: 1px solid #2a3550; border-radius: 12px; background: #131d30; padding: 1rem; }
+.row { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+input, select, button { border-radius: 8px; border: 1px solid #304060; background: #0e1729; color: #e8eefc; padding: .6rem .7rem; }
+button { cursor: pointer; }
+.small { color: #9db1d8; font-size: .9rem; }
